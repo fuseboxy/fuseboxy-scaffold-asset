@@ -131,14 +131,14 @@ function fuseboxyScaffold__initAjaxUploader(){
 		var ajaxFormID = $container.attr('id')+'-ajax-upload';
 		var $ajaxForm = $('<form><input type="file" name="file" /><button type="submit">Upload</button></form>').attr({
 			'id'              : ajaxFormID,
- 			'action'          : $field.attr('data-form-action'),
+			'action'          : $field.attr('data-form-action'),
 			'method'          : 'post',
 			'enctype'         : 'multipart/form-data',
- 			'data-toggle'     : 'ajax-submit',
- 			'data-target'     : $field.attr('data-target'),
- 			'data-callback'   : "fuseboxyScaffold__initAjaxUploader(); $('#"+ajaxFormID+"').remove();",
- 			'data-transition' : 'none',
- 		}).hide().appendTo('body');
+			'data-toggle'     : 'ajax-submit',
+			'data-target'     : $field.attr('data-target'),
+			'data-callback'   : "fuseboxyScaffold__initAjaxUploader(); $('#"+ajaxFormID+"').remove();",
+			'data-transition' : 'none',
+		}).hide().appendTo('body');
 		// hidden file field
 		// ===> choose file & auto-submit
 		var $hiddenFileField = $ajaxForm.find('[type=file]');
