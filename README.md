@@ -1,4 +1,4 @@
-JS & CSS for Fuseboxy Scaffold (v2.x)
-=====================================
+JS & CSS FOR FUSEBOXY SCAFFOLD (2.x)
+====================================
 
 Public repo for CDN
