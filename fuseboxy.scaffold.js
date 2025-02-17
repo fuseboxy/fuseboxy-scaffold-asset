@@ -69,22 +69,23 @@ $(function(){
 
 function fuseboxyScaffold__initDatetimePicker(){
 	$('.scaffold-input-datetime,.scaffold-input-date,.scaffold-input-time').not('.datepicker-ready').each(function(){
-		var config = {};
+		var config;
 		var $field = $(this);
 		// config @ date
 		if ( $field.hasClass('scaffold-input-date') ) config = {
 			format: 'Y-m-d',
 			datepicker: true,
 			timepicker: false,
-			scrollMonth : false,
-			scrollInput : false
+			scrollMonth: false,
+			scrollInput: false
 		};
 		// config @ time
 		else if ( $field.hasClass('scaffold-input-time') ) config = {
 			format: 'H:i',
 			datepicker: false,
 			timepicker: true,
-			scrollInput : false,
+			scrollInput: false,
+			defaultTime: '00:00',
 			step: 30
 		};
 		// config @ datetime
@@ -92,7 +93,8 @@ function fuseboxyScaffold__initDatetimePicker(){
 			format: 'Y-m-d H:i',
 			datepicker: true,
 			timepicker: true,
-			scrollInput : false,
+			scrollInput: false,
+			defaultTime: '00:00',
 			step: 30
 		};
 		// transform
