@@ -124,22 +124,22 @@ function fuseboxyScaffold__initAjaxUploader(){
 	$('.scaffold-input-file:not(.uploader-ready)').each(function(){
 		// elements
 		var $container  = $(this);
-		var $field      = $container.find('[data-toggle=ajax-upload]');
-		var $chooseBtn  = $( $field.attr('data-choose-button') );
-		var $removeBtn  = $( $field.attr('data-remove-button') );
-		var $undoBtn    = $( $field.attr('data-undo-button') );
-		var $preview    = $( $field.attr('data-preview') );
+		var $field      = $container.find('[data-bsx-toggle=ajax-upload]');
+		var $chooseBtn  = $( $field.attr('data-bsx-choose-button') );
+		var $removeBtn  = $( $field.attr('data-bsx-remove-button') );
+		var $undoBtn    = $( $field.attr('data-bsx-undo-button') );
+		var $preview    = $( $field.attr('data-bsx-preview') );
 		// create hidden form
 		var ajaxFormID = $container.attr('id')+'-ajax-upload';
 		var $ajaxForm = $('<form><input type="file" name="file" /><button type="submit">Upload</button></form>').attr({
-			'id'              : ajaxFormID,
-			'action'          : $field.attr('data-form-action'),
-			'method'          : 'post',
-			'enctype'         : 'multipart/form-data',
-			'data-toggle'     : 'ajax-submit',
-			'data-target'     : $field.attr('data-target'),
-			'data-callback'   : "fuseboxyScaffold__initAjaxUploader(); $('#"+ajaxFormID+"').remove();",
-			'data-transition' : 'none',
+			'id'                  : ajaxFormID,
+			'action'              : $field.attr('data-bsx-form-action'),
+			'method'              : 'post',
+			'enctype'             : 'multipart/form-data',
+			'data-bsx-toggle'     : 'ajax-submit',
+			'data-bsx-target'     : $field.attr('data-bsx-target'),
+			'data-bsx-callback'   : "fuseboxyScaffold__initAjaxUploader(); $('#"+ajaxFormID+"').remove();",
+			'data-bsx-transition' : 'none',
 		}).hide().appendTo('body');
 		// hidden file field
 		// ===> choose file & auto-submit
@@ -167,9 +167,9 @@ function fuseboxyScaffold__initAjaxUploader(){
 		// ===> click to restore to original image
 		$undoBtn.on('click', function(evt){
 			evt.preventDefault();
-			$field.val( $undoBtn.attr('data-original-image') );
-			$preview.parent().show().attr('href', $undoBtn.attr('data-original-image'));
-			$preview.attr('src', $undoBtn.attr('data-original-image'));
+			$field.val( $undoBtn.attr('data-bsx-original-image') );
+			$preview.parent().show().attr('href', $undoBtn.attr('data-bsx-original-image'));
+			$preview.attr('src', $undoBtn.attr('data-bsx-original-image'));
 			$undoBtn.addClass('d-none');
 			$removeBtn.show();
 		});
